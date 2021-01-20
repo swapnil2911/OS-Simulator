@@ -11,6 +11,10 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    if  !@article.public
+      current_user.private_articles_remaining -= 1 
+      current_user.save 
+    end 
   end
 
   # GET /articles/new
@@ -26,7 +30,7 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(article_params)
-    @article.user_id = current_user.user_id 
+    @article.user_id = current_user.id 
 
     respond_to do |format|
       if @article.save

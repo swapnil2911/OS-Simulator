@@ -16,9 +16,15 @@
       <tr>
         <td><%= article.name %></td>
         <td><%= article.content %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if can? :show, Article %>
+          <td><%= link_to 'Show', article %></td>
+        <% end %>
+        <% if can? :edit, Article %>
+          <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <% end %>
+        <% if can? :destroy, Article %>
+          <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

@@ -10,10 +10,16 @@ class Ability
     # Can read public articles
     can :show, Article, public: true
 
+    # Can sign up
+    can :new, User
+    can :create, User
+
     # Additional permissions for logged in users
     if user.present?
-      # Can read private articles
-      can :show, Article, public: false
+      # Can read private articles provided that the number hasn't exceeded private_articles_remaining.
+      if user.private_articles_remaining > 0
+        can :show, Article, public: false
+      end 
 
       # Can create articles
       can :new, Article
@@ -25,7 +31,32 @@ class Ability
 
       # Can destroy their own articles
       can :destroy, Article, user_id: user.id
+
+      # Can see list of users for now
+      can :index, User 
+
+      # Can see their own profile
+      can :show, User, id: user.id 
+
+      # Can edit their own profile
+      can :edit, User, id: user.id
+      can :update, User, id:user.id
+
+      # Allow only admins to edit the Users table
+      if user.admin
+        # Admin Can destroy any user.
+        can :destroy, User  
+      end 
     end 
+
+    # if user.admin?
+      # Give provision to create, edit and delete users, only if the current user is an admin.
+      # can :index, User 
+      #can :new, User
+      #can :create, User
+      #can :edit, User
+      #can :destroy, User 
+    #end 
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
