@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
     helper_method :current_user
-    rescue_from 'CanCan::AccessDenied' do |exception|
-      redirect_to root_url, notice: "You are not authorised to do that action." 
+    rescue_from CanCan::AccessDenied do |exception|
+      redirect_to root_url, notice: "Not authorised to #{exception.action} #{exception.subject}"
     end 
 
     def current_user
