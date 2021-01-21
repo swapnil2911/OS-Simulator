@@ -11,6 +11,8 @@ class ApplicationController < ActionController::Base
         elsif current_user.private_articles_remaining == 0
           redirect_to root_url, notice: "You have exhausted your quota of private articles"
         end 
+      else
+        redirect_to root_url, notice: "Not authorised to #{exception.action} #{exception.subject}"
       end 
     end 
 
