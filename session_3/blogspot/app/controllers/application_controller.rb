@@ -1,7 +1,17 @@
 class ApplicationController < ActionController::Base
     helper_method :current_user
     rescue_from CanCan::AccessDenied do |exception|
-      redirect_to root_url, notice: "Not authorised to #{exception.action} #{exception.subject}"
+      control = exception.subject.to_s 
+      act = exception.action.to_s 
+      if !current_user 
+        redirect_to root_url, notice: "You must be logged in"
+      elsif control.include? 'Article'
+        if ['edit','destroy'].any? { |str| str == act }
+          redirect_to root_url, notice: "You cannot edit or delete other peoples' articles"
+        elsif current_user.private_articles_remaining == 0
+          redirect_to root_url, notice: "You have exhausted your quota of private articles"
+        end 
+      end 
     end 
 
     def current_user
