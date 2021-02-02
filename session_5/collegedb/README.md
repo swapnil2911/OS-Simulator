@@ -1,24 +1,4 @@
-# README
+# Database Schema 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+I have added migrations, and migrated four tables, namely Student, Course, Registration and Assignment. For Student and Course I have assumed to have a many-to-many relationship, since every student can register for many courses, and every course can have many student, and hence, I added another table Registrations, with two attributes course_id and student_id, which are foreign keys referencing Course and Student table respectively. I have done this using the associations `belongs_to :student`, and `belongs_to :course` in the Registration model. In Student model, I have added an association `has_many :courses, through: :registrations`, that allows me to directly access the courses taken by the student, as `@student.courses`. In the Course model, I have added the association `has_many :students, through: :registrations`, that allows me to access all the students that have taken a particular course, as `@course.students`.
+In the Assignment model, since every assignment must be a part of a course, I have added the `belongs_to :course` association in the model, and in the Course model, I have added the association `has_many :assignments`, since every course can have one or more assignments.  
