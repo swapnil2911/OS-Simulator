@@ -7,7 +7,7 @@ int main() {
 	int choice; 
 
 	cout<<"---->Enter the choice as per the following menu:\n"; 
-       	cout<<"---->1 for CPU Scheduling\n---->2 for Producer Consumer\n---->3 for Reader Writer\n---->4 for Banker's problem\n---->5 for MFT\n---->6 for MVT\n---->7 for Paging\n---->8 for Disk Scheduling\n ---->\n";
+       	cout<<"---->1 for CPU Scheduling\n---->2 for Producer Consumer\n---->3 for Reader Writer\n---->4 for Banker's problem\n---->5 for MFT\n---->6 for MVT\n---->7 for Paging\n---->8 for Disk Scheduling\n ---->";
 	cin>>choice; 
 	switch(choice) { 
 		case 1: Schedule_CPU(); 
