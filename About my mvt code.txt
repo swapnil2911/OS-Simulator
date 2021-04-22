@@ -1,0 +1,8 @@
+So my code has a main mvt function you can call as mvt().
+And then i have other functions in my code such as first_fit_insertion(), best_fit_insertion, worst_fit_insertion, deletion_from_memory and
+printer function which will be called by mvt as according to it need.
+
+and you have to declare a structure struct process and a vector array which are declared in my code in your main cpp file.
+Then all things will gonna work properly.
+
+ 
