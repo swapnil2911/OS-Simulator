@@ -129,7 +129,7 @@ void SRTF()
     cin>>n; 
     Process proc[n];
 
-    cout<<"Enter the burst time and arrival time of each process:\n"; 
+    cout<<"Enter the arrival time and burst time of each process:\n"; 
     for(int i = 0; i < n; i++) 
     {
         cout<<"Process "<<i+1<<":";
