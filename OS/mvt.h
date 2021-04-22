@@ -1,3 +1,7 @@
+#include<bits/stdc++.h> 
+
+using namespace std; 
+
 struct process{
     int id=-1;
     int tot_size;

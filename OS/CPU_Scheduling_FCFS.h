@@ -1,3 +1,7 @@
+#include<bits/stdc++.h> 
+
+using namespace std; 
+
 void SortAT(int at[], int processes[], int bt[], int n) 
 {
   for(int i = 0; i < n; i++)  
