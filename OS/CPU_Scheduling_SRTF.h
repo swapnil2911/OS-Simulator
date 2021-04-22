@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-  
 struct Process {
     int pid; // Process ID
     int bt; // Burst Time
