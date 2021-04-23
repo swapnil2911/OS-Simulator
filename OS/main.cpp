@@ -22,22 +22,22 @@ int main() {
 		case 4: //Banker(); 
 			break; 
 		case 5:	{
-  			int choice;
+  			int choice1;
   			cout<<"Select type \n0. Exit\n1. Best fit Memory Management in Fixed size partitioning.\n2. First fit Memory Management in Fixed size partitioning.\n3. Worst fit Memory Management in Fixed size partitioning.\n";
 
   			while(1){
   				cout<<"\nEnter type : ";
-  				cin>>choice;
-   	 			if(choice==1){
+  				cin>>choice1;
+   	 			if(choice1 == 1){
       					bestfit_mft();
     				}
-    				if(choice==2){
+    				if(choice1 == 2){
       					firstfit_mft();
     				}
-    				if(choice==3){
+    				if(choice1 == 3){
       					worstfit_mft();
     				}
-    				if(choice==0)
+    				if(choice1 == 0)
     					break;
   			}
 		}
