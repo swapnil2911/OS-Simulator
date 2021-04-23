@@ -1,7 +1,5 @@
 #include<bits/stdc++.h>
-#include "bestfit_mft.h"
-#include "firstfit_mft.h"
-#include "worstfit_mft.h"
+#include "mft.h"
 #include "mvt.h"
 #include "CPU_Scheduling_SRTF.h"
 using namespace std; 
