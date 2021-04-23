@@ -1,0 +1,1 @@
+Here, I have included three functions for FIFO, LRU, MRU. In this .h file, using namespace std is mandatory as i have used stl for unordered sets. And in the main function we can create a menu driven code to choose the method of page replacement technique. 
