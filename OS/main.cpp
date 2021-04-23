@@ -21,27 +21,8 @@ int main() {
 			break; 
 		case 4: //Banker(); 
 			break; 
-		case 5:	{
-  			int choice1;
-  			cout<<"Select type \n0. Exit\n1. Best fit Memory Management in Fixed size partitioning.\n2. First fit Memory Management in Fixed size partitioning.\n3. Worst fit Memory Management in Fixed size partitioning.\n";
-
-  			while(1){
-  				cout<<"\nEnter type : ";
-  				cin>>choice1;
-   	 			if(choice1 == 1){
-      					bestfit_mft();
-    				}
-    				if(choice1 == 2){
-      					firstfit_mft();
-    				}
-    				if(choice1 == 3){
-      					worstfit_mft();
-    				}
-    				if(choice1 == 0)
-    					break;
-  			}
-		}
-		break;
+		case 5:	MFT(); 
+			break;
 		case 6: //MVT(); 
 			break; 
 		case 7: //Paging(); 
