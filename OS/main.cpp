@@ -3,6 +3,7 @@
 #include "firstfit_mft.h"
 #include "worstfit_mft.h"
 #include "mvt.h"
+#include "CPU_Scheduling_SRTF.h"
 using namespace std; 
 
 int main() { 
@@ -13,16 +14,12 @@ int main() {
 	cin>>choice; 
 	switch(choice) { 
 		case 1: //Schedule_CPU();
-    cout<<"Scheduling\n"; 
 			break; 
-		case 2: //Prod_Cons();
-    cout<<"prod_cons\n"; 
+		case 2: //Prod_Cons(); 
 			break; 
 		case 3: //Reader_Writer(); 
-    cout<<"read_write\n";
 			break; 
-		case 4: //Banker();
-    cout<<"banker\n"; 
+		case 4: //Banker(); 
 			break; 
 		case 5:	{
   			int choice;
