@@ -185,3 +185,26 @@ void mru()
   }
   cout<<"Total number of Page Faults in MRU method are "<<page_faults<<endl;
  }
+
+void paging()
+ {
+    cout << "Enter the paging algorithm which you want to use\n";
+    cout << "Press 1 for FIFO\nPress 2 for LRU\nPress 3 for MRU\n";
+    int choice;
+    do{
+        cout << "Enter your choice: ";
+        cin >> choice;
+        if(choice==1){
+            fifo();
+        }
+        else if(choice==2){
+            lru();
+        }
+        else if(choice==3){
+            mru();
+        }
+        else{
+            cout << "Please enter valid choice\n";
+        }
+    }while(choice<=0||choice>3);
+ }
