@@ -50,7 +50,7 @@ void cur_process(prod_cons_process &cur,int ind,int tot,prod_cons_process *all){
 
       sem_wait(&s);
 
-      std::cout<<"Producer P"<<cur.no<<" Starts Produstd::cing at t = "<<prod_cons_current_time<<'\n';
+      std::cout<<"Producer P"<<cur.no<<" Starts Producing at t = "<<prod_cons_current_time<<'\n';
       prod_cons_current_time+=cur.b_t;
 
       prod_cons_buffer_empty--;
