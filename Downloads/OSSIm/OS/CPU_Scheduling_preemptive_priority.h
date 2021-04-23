@@ -19,7 +19,7 @@ int get(struct priority_process arr[],int t,int n)
        return imin;
 }
 
-void gantt_chart(struct priority_process arr[],int p[],int n,int nop)
+void final_output(struct priority_process arr[],int p[],int n,int nop)
 {
        int i,a[100],s=0;
        float avgtat=0,avgwt=0;
@@ -39,12 +39,16 @@ void gantt_chart(struct priority_process arr[],int p[],int n,int nop)
               avgwt+=arr[i].wt;
               avgtat+=arr[i].tt;
        }
-       printf("Process\tPriority\tArrival Time\tBurst Time\tCompletion Time\tTurnaround Time\tWaiting Time\n");
+       printf("\n\n");
+       printf("Process\t|Priority\t|Arrival Time\t|Burst Time\t|Completion Time|Turnaround Time|Waiting Time\n");
        for(i=0;i<nop;i++)
        {
-              printf("[P%d]\t%d\t\t%d\t\t%d\t\t%d\t\t%d\t\t%d\n",arr[i].pno,arr[i].pr,arr[i].at,
+              printf("[P%d]\t|\t%d\t|\t%d\t|\t%d\t|\t%d\t|\t%d\t|\t%d\n",arr[i].pno,arr[i].pr,arr[i].at,
                           arr[i].cbt,arr[i].ct,arr[i].tt,arr[i].wt);
        }
+       printf("\n");
+       printf("Total wait time: %.2f\n",avgwt);
+       printf("Total turnaround time: %.2f\n",avgtat);
        avgwt = avgwt/nop;
        avgtat = avgtat/nop;
        printf("Average Waiting Time : %.2f\n",avgwt);
@@ -60,7 +64,7 @@ int iscomplete(struct priority_process arr[],int n)
                      return 0;
        return 1;
 }
-void ppriority()
+int main()
 {
        int n,i,a,t=0,j;
        int p[100];
@@ -95,6 +99,6 @@ void ppriority()
               t=t+1;
               i++;
        }
-       gantt_chart(arr,p,i,n);
-       return;
+       final_output(arr,p,i,n);
+       return 0;
 }
